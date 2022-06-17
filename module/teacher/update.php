@@ -5,7 +5,7 @@ if (isset($_POST['update'])) {
     $teacher = $_POST['teacher'];
     $hour = $_POST['hours'];
 
-    $sql = "UPDATE teachers SET teacher='$teacher', hour='$hour' WHERE id='$id'";
+    $sql = "UPDATE teachers SET teacher='$teacher', hours='$hour' WHERE id='$id'";
     if (mysqli_query($config, $sql)) {
         echo '<script>alert("Data Berhasil diUpdate!"); window.location.href="?m=teacher&s=view"</script>';
     } else {

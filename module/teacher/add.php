@@ -1,5 +1,5 @@
-   <!-- Content Header (Page header) -->
-   <div class="content-header">
+<!-- Content Header (Page header) -->
+<div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -31,12 +31,12 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <form action="?m=teacher&s=save" method="post">
+                    <form action="?m=teacher&s=save" method="post" enctype="multipart/form-data">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <from class="input-group-text"><i class="fas fa-id-card"></i></span>
                             </div>
-                            <input type="number" name="nip" class="form-control" placeholder="Nomor Induk Guru" required autofocus>
+                            <input type="number" name="nip" class="form-control" placeholder="Nomor Induk Guru (max 16 digit)" required autofocus>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -48,44 +48,44 @@
                             <div class="input-group-prepend">
                                 <from class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                             </div>
-                            <input type="text" name="pob" class="form-control" placeholder="Tempat Lahir" required>
+                            <input type="text" name="pob" class="form-control" placeholder="Tempat Lahir (Isi dengan nama Kabupaten/Kota)">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <from class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                             </div>
-                            <input type="date" name="dob" class="form-control" placeholder="Tanggal Lahir" required>
+                            <input type="date" name="dob" class="form-control" placeholder="Tanggal Lahir">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <from class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                             </div>
-                            <input type="number" name="phone" class="form-control" placeholder="No Handphone" required>
+                            <input type="number" name="phone" class="form-control" placeholder="Nomor HandPhone" required autofocus>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <from class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                                <from class="input-group-text"><i class="fas fa-portrait"></i></span>
                             </div>
-                            <input type="file" accept="image/jpg" name="photo" class="form-control" required>
+                            <input type="file" name="photo" accept="image/jpg" class="form-control">
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3"> 
                             <div class="input-group-prepend">
                                 <from class="input-group-text"><i class="fas fa-book"></i></span>
                             </div>
-                            <select name="subject_id" class="form-control" required>
-                                <option value="">Mata Pelajaran</option>
-                                <?php
-                                include_once('config.php');
-                                $sql = "SELECT * FROM subjects ORDER BY subject ASC";
-                                $query = mysqli_query ($config, $sql);
-                                while ($row = mysqli_fetch_array ($query)) {
-                                  echo "<option value='$row[id]'>$row[subject]</option>";
-                                }
-                                ?>
+                            <select name="subject_id"  class="form-control" required>
+                            <option value="">Mata Pelajaran*</option>
+                            <?php
+                            include_once('config.php');
+                            $sql = "SELECT * FROM subjects ORDER BY subject ASC";
+                            $query = mysqli_query($config, $sql);
+                            while ($row = mysqli_fetch_array($query)) {
+                              echo "<option value='$row[id]'>$row[subject]</option>";
+                            }
+                            ?>
                             </select>
                         </div>
                         <div class="input-group mb-3">
-                                <input type="submit" name="save" class="btn btn-md btn-primary" value="Simpan">&nbsp;
+                                <input type="submit" name="save" class="btn btn-md btn-primary" value="Simpan">&nbsp;&nbsp;&nbsp;
                                 <input type="reset" class="btn btn-md btn-warning">
                         </div>
                     </form>

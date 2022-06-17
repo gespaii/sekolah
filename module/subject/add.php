@@ -42,7 +42,7 @@
                             <div class="input-group-prepend">
                                 <from class="input-group-text"><i class="fas fa-user-clock"></i></span>
                             </div>
-                            <input type="text" name="hour" class="form-control" placeholder="Jam Mata Pelajaran" maxlength="2" required>
+                            <input type="text" name="hours" class="form-control" placeholder="Jam Mata Pelajaran" maxlength="2" required>
                         </div>
                         <div class="input-group mb-3">
                                 <input type="submit" name="save" class="btn btn-md btn-primary" value="Simpan">&nbsp;
